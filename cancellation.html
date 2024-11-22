@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      * .navbar {
+        background: black;
+        padding: 15px;
+      }
+
+      .navdiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links li {
+        list-style: none;
+      }
+
+      .nav-links li a {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .navdiv {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-links li a {
+          font-size: 18px;
+        }
+
+        .logo img {
+          height: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav-links li a {
+          font-size: 16px;
+        }
+
+        .navdiv {
+          gap: 20px;
+        }
+
+        .logo img {
+          height: 35px;
+        }
+      }
+
+      .heading {
+        color: white;
+        background-image: url("./assets/Homepage-banner.png");
+        background-size: cover;
+        background-position: center;
+        padding: 0px 50px;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: justify;
+      }
+
+      .heading h1 {
+        font-size: 60px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        line-height: 3;
+      }
+
+      .heading p {
+        font-size: 20px;
+        font-weight: lighter;
+        line-height: 2;
+        margin-bottom: 20px;
+        margin: 30px;
+      }
+
+      @media (max-width: 1024px) {
+        .heading {
+          padding: 30px;
+          text-align: left;
+        }
+
+        .heading h1 {
+          font-size: 100px;
+          line-height: 2.5;
+        }
+
+        .heading p {
+          font-size: px;
+          line-height: 1.8;
+          text-align: justify;
+        }
+      }
+
+      .heading {
+        color: white;
+        background-image: url("./assets/Homepage-banner.png");
+        background-size: cover;
+        background-position: center;
+        padding: 20px 30px;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: justify;
+      }
+
+      .heading h1 {
+        font-size: 60px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        line-height: 2;
+        margin: 30px;
+
+      }
+
+      .heading p {
+        font-size: px;
+        font-weight: lighter;
+        line-height: 2;
+        margin-bottom: 20px;
+        margin: 30px;
+
+      }
+
+      @media (max-width: 1024px) {
+        .heading {
+          padding: 20px;
+          align-items: flex-start;
+        }
+
+        .heading h1 {
+          font-size: 50px;
+          line-height: 1.8;
+        }
+
+        .heading p {
+          font-size: 24px;
+          line-height: 1.8;
+          text-align: justify;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .heading {
+          text-align: center;
+          align-items: center;
+          padding: 15px;
+        }
+
+        .heading h1 {
+          font-size: 40px;
+          line-height: 1.5;
+        }
+
+        .heading p {
+          font-size: 20px;
+          line-height: 1.6;
+          text-align: justify;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .heading {
+          padding: 10px;
+        }
+
+        .heading h1 {
+          font-size: 37px;
+          line-height: 1.4;
+        }
+
+        .heading p {
+          font-size: 20px;
+          line-height: 1.5;
+          text-align: justify;
+        }
+      }
+
+      footer {
+        background-image: linear-gradient(
+          to bottom,
+          #5f8911 0%,
+          black 15%,
+          black 100%
+        );
+        color: #fff;
+        padding: 40px 20px;
+        font-size: 13px;
+        line-height: 25px;
+        text-align: center;
+      }
+
+      .row {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .col {
+        flex-basis: 100%;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .col h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .col a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin: 5px 0;
+        transition: color 0.3s;
+      }
+
+      .col a:hover {
+        color: #5f8911;
+      }
+
+      .logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-icons img {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s, filter 0.3s;
+      }
+
+      .social-icons img:hover {
+        transform: scale(1.2);
+        filter: brightness(1.5);
+      }
+
+      .footer-links {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+
+      .footer-links a:hover {
+        color: #5f8911;
+      }
+
+      hr {
+        border: none;
+        height: 2px;
+        background-color: #333;
+        width: 90%;
+        margin: 20px auto;
+      }
+
+      copyright {
+        margin-top: 20px;
+        font-size: 12px;
+      }
+
+      @media (max-width: 768px) {
+        .col {
+          flex-basis: 100%;
+          text-align: center;
+        }
+
+        .social-icons {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .col {
+          flex-basis: 45%;
+          text-align: left;
+        }
+
+        .social-icons {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .col {
+          flex-basis: 22%;
+        }
+
+        footer {
+          padding: 60px 0;
+        }
+
+        .footer-links {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+        <div class="navdiv">
+          <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./About.html">About Us</a></li>
+          </ul>
+  
+          <div class="logo">
+            <a href="./index.html">
+              <img
+                src="./assets/Logo transparent-01 1.svg"
+                alt="Growthawk Logo"
+              />
+            </a>
+          </div>
+  
+          <ul class="nav-links">
+            <li><a href="./Work.html">Work</a></li>
+            <li><a href="./Contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <header class="heading">
+      <h1>Cancellation</h1>
+      <p>
+        We at Growthawk tend to be cautious at the delivery of the best-in-class
+        ERP solution which meets your requirement. Now, we understand that, for
+        some unknown reason, you may want to cancel your subscription with
+        Growthawk for ERP services. To make it hassle-free and transparent to
+        the practice, we are putting the cancellation policy on this page.</p>
+        <p style="font-weight: bolder;font-size: 25px;">Cancellation Process:</p> <p>In case you wish to unsubscribe from our ERP
+        software, you may contact us using your customer support contact details
+        available on our website, or you can reach directly at support@growthawk.com. We would appreciate it if you could provide your
+        account information, including your email address with which you
+        subscribed to our site and the kind of plan you are subscribed for so
+        that we may assist you immediately in your request.</p><p  style="font-weight: bolder;font-size: 25px;">Terms of
+        cancellation</p><p> Notice Period:If you cancel your subscription, there is
+        minimum notice period of 30 days before next billing cycle, So on your
+        next period, there won't be any charge on your bill, and your
+        cancellation request would be processed.</p><p> Refund Policy: In our
+        subscription model, there would be no refunds of partial months.
+        However, all services would be available till the completion of the
+        billing period.</p><p> Data Retention: We will retain your data for the next 30
+        days after cancellation. You can request your data copy within these 30
+        days for transfer to another system, and then, as a matter of practice,
+        as stated in our privacy policy, we will delete your data securely.</p>
+        <p>Post-Cancellation Support As your subscription will becanceled,
+        Growthawk's support team will still be available to you in case of any
+        queries or issues faced by von while undereoine the transition period.</p>
+       <p  style="font-weight: bolder;font-size: 25px;"> Why Growthawk's ERP solutions?</p>
+<p>Growthawk has designed our ERP solutions that make all operations management smoother and much more efficient and based on real-time insights. We've always kept your business value at the core, so I would be completely happy to understand how we could have further improved if you want to cancel. Your feedback is important to our continuous development.</p>
+<p>We hope you have the best experience with Growthawk's ERP and will be ready to help you should you wish to return at any point in the future.
+Should you have any queries regarding cancellations, please do not hesitate to contact us. Thanks for entrusting us with your ERP needs.</p>
+      </p>
+    </header>
+    <footer>
+        <div class="row">
+          <div class="col">
+            <img
+              src="./assets/Logo transparent-01 1.svg"
+              class="logo"
+              alt="Growthawk Logo"
+            />
+          </div>
+          <div class="col">
+            <h4>Company</h4>
+            <a href="./About.html">About Us</a>
+            <a href="./About.html">Custom Software</a>
+            <a href="./About.html">Mobile</a>
+            <a href="./Empower.html">Ready to use Apps</a>
+          </div>
+          <div class="col">
+            <h4>Useful Links</h4>
+            <a href="./Empower.html">GDPR Compliance</a>
+            <a href="./Empower.html">Data Security</a>
+            <a href="./Empower.html">Terms and Conditions</a>
+            <a href="./Refund.html">Refund</a>
+            <a href="./cancellation.html">Cancellation</a>
+            <a href="./Blog.html">Blogs</a>
+            <a href="./Antispam.html">Anti Spam</a>
+            <a href="./legal.html">Legal</a>
+            <a href="./policy.html">Policy</a>
+          </div>
+          <div class="col">
+            <h4>Support</h4>
+            <a href="./Contact.html">Contact Us</a>
+          </div>
+        </div>
+  
+        <hr />
+  
+        <div class="social-icons">
+          <a href="https://www.instagram.com/growthawkbd?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"
+            ><img src="./assets/social.png" alt="Instagram"
+          /></a>
+          <a href="https://x.com/growthawk" target="_blank"
+            ><img src="./assets/twitter copy.png" alt="Twitter"
+          /></a>
+          <a href="https://www.facebook.com/growthawk?mibextid=LQQJ4d" target="_blank"
+            ><img src="./assets/facebook.png" alt="Facebook"
+          /></a>
+          <a href="https://www.linkedin.com/company/growthawk-business-development/" target="_blank"
+            ><img src="./assets/linkedin.png" alt="LinkedIn"
+          /></a>
+        </div>
+  
+  
+        <div class="footer-links">
+          <a href="./policy.html">Terms of Service</a> –
+          <a href="./policy.html">Privacy Policy</a>
+        </div>
+  
+        <div class="copyright">&copy; 2024 Growthawk. All Rights Reserved.</div>
+      </footer>
+    </body>
+  </html>
+  

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      * .navbar {
+        background: black;
+        padding: 15px;
+      }
+
+      .navdiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links li {
+        list-style: none;
+      }
+
+      .nav-links li a {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .navdiv {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .nav-links li a {
+          font-size: 18px;
+        }
+
+        .logo img {
+          height: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav-links li a {
+          font-size: 16px;
+        }
+
+        .navdiv {
+          gap: 20px;
+        }
+
+        .logo img {
+          height: 35px;
+        }
+      }
+
+      .heading {
+        color: white;
+        background-image: url("./assets/Homepage-banner.png");
+        background-size: cover;
+        background-position: center;
+        padding: 0px 50px;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: justify;
+      }
+
+      .heading h1 {
+        font-size: 60px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        line-height: 3;
+        margin: 30px;
+
+      }
+
+      .heading p {
+        font-size: 20px;
+        font-weight: lighter;
+        line-height: 2;
+        margin-bottom: 20px;
+        margin: 30px;
+      }
+
+      @media (max-width: 1024px) {
+        .heading {
+          padding: 30px;
+          text-align: left;
+        }
+
+        .heading h1 {
+          font-size: 100px;
+          line-height: 2.5;
+        }
+
+        .heading p {
+          font-size: px;
+          line-height: 1.8;
+          text-align: justify;
+        }
+      }
+
+      .heading {
+        color: white;
+        background-image: url("./assets/Homepage-banner.png");
+        background-size: cover;
+        background-position: center;
+        padding: 20px 30px;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: justify;
+      }
+
+      .heading h1 {
+        font-size: 60px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        line-height: 2;
+      }
+
+      .heading p {
+        font-size: px;
+        font-weight: lighter;
+        line-height: 2;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 1024px) {
+        .heading {
+          padding: 20px;
+          align-items: flex-start;
+        }
+
+        .heading h1 {
+          font-size: 50px;
+          line-height: 1.8;
+        }
+
+        .heading p {
+          font-size: 24px;
+          line-height: 1.8;
+          text-align: justify;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .heading {
+          text-align: center;
+          align-items: center;
+          padding: 15px;
+        }
+
+        .heading h1 {
+          font-size: 40px;
+          line-height: 1.5;
+        }
+
+        .heading p {
+          font-size: 20px;
+          line-height: 1.6;
+          text-align: justify;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .heading {
+          padding: 10px;
+        }
+
+        .heading h1 {
+          font-size: 37px;
+          line-height: 1.4;
+        }
+
+        .heading p {
+          font-size: 20px;
+          line-height: 1.5;
+          text-align: justify;
+        }
+      }
+
+      footer {
+        background-image: linear-gradient(
+          to bottom,
+          #5f8911 0%,
+          black 15%,
+          black 100%
+        );
+        color: #fff;
+        padding: 40px 20px;
+        font-size: 13px;
+        line-height: 25px;
+        text-align: center;
+      }
+
+      .row {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .col {
+        flex-basis: 100%;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .col h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .col a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin: 5px 0;
+        transition: color 0.3s;
+      }
+
+      .col a:hover {
+        color: #5f8911;
+      }
+
+      .logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-icons img {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s, filter 0.3s;
+      }
+
+      .social-icons img:hover {
+        transform: scale(1.2);
+        filter: brightness(1.5);
+      }
+
+      .footer-links {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+
+      .footer-links a:hover {
+        color: #5f8911;
+      }
+
+      hr {
+        border: none;
+        height: 2px;
+        background-color: #333;
+        width: 90%;
+        margin: 20px auto;
+      }
+
+      copyright {
+        margin-top: 20px;
+        font-size: 12px;
+      }
+
+      @media (max-width: 768px) {
+        .col {
+          flex-basis: 100%;
+          text-align: center;
+        }
+
+        .social-icons {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .col {
+          flex-basis: 45%;
+          text-align: left;
+        }
+
+        .social-icons {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .col {
+          flex-basis: 22%;
+        }
+
+        footer {
+          padding: 60px 0;
+        }
+
+        .footer-links {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+        <div class="navdiv">
+          <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./About.html">About Us</a></li>
+          </ul>
+  
+          <div class="logo">
+            <a href="./index.html">
+              <img
+                src="./assets/Logo transparent-01 1.svg"
+                alt="Growthawk Logo"
+              />
+            </a>
+          </div>
+  
+          <ul class="nav-links">
+            <li><a href="./Work.html">Work</a></li>
+            <li><a href="./Contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <header class="heading">
+      <h1>  Anti-Spam</h1>
+      <p>
+        Growthhawk guarantees to offer the industry-specific ERP solutions precisely to the order of any enterprise. At Growthhawk, we ensure that our customers have an easy and trusted experience with our organization. Growthhawk does not spam its how respectful and relevant it is because of our strict anti-spam policy.</p>
+        <p style="font-weight: bolder;font-size: 25px;">Expect at Growthhawk</p> <p>Growthhawk won't spam it at least not without getting you to your inbox. All communications regarding ERP solutions - whether mail, social media, or otherwise are filtered through the most relevant, on-time information about our services and offers. We do not spam but send relevant material that strikes a chord within the interests of your business for ERP. Growthhawk will always ensure that our emails and all such communications turn out to be value additions to your journey with ERP and do not result in unwanted mail clutter.</p>
+        <p  style="font-weight: bolder;font-size: 25px;">Policy Growthhawk</p><p> Anti-Spam Growthhawk's anti-spam policy is grounded in the following fundamental principles:
+
+        </p><p> No Spam Emails: We never spams. We'll communicate only with you if you have opted in, have shown interest in selling our Growthawk ERP services, or had business relations in the past with Growthhawk.</p>
+        <p  style="font-weight: bolder;font-size: 25px;"> Clear Opt-out Options:</p>
+        <p>Respect your preferences. Every communication will include an easy option for you to opt out if, at any time, you ever choose not to receive communications from us anymore or you do not want to receive news or ERP solution-promotional offers from Growthawk. Opting out will instantly take the email address off all of our ERP-focused mailing lists.</p>
+       <p  style="font-weight: bolder;font-size: 25px;"> Data Protection and Privacy:</p>
+<p>Growthawk respects data protection. We follow the best practices regarding the terms of data protection as well as all the relevant privacy provisions in handling your information. Your information would be used only for relevant communications with regard to ERP solutions, and you can rest assured that it would not be provided to third parties for unsolicited marketing purposes.</p>
+<p style="font-weight: bolder;font-size: 25px;">Transparent Practices.</p><p>Our anti-spam policy speaks for the commitment to transparency on our part. We look forward to establishing a relationship of trust; therefore, do not hesitate to pose any questions or concerns you may have regarding our communication-the team at Growthawk will be more than happy to help you.
+
+    Growthhawk is inspired by these values and awaits a spam-free product environment that will make a real difference for your ERP solutions.</p>
+      </p>
+    </header>
+    <footer>
+        <div class="row">
+          <div class="col">
+            <img
+              src="./assets/Logo transparent-01 1.svg"
+              class="logo"
+              alt="Growthawk Logo"
+            />
+          </div>
+          <div class="col">
+            <h4>Company</h4>
+            <a href="./About.html">About Us</a>
+            <a href="./About.html">Custom Software</a>
+            <a href="./About.html">Mobile</a>
+            <a href="./Empower.html">Ready to use Apps</a>
+          </div>
+          <div class="col">
+            <h4>Useful Links</h4>
+            <a href="./Empower.html">GDPR Compliance</a>
+            <a href="./Empower.html">Data Security</a>
+            <a href="./Empower.html">Terms and Conditions</a>
+            <a href="./Refund.html">Refund</a>
+            <a href="./cancellation.html">Cancellation</a>
+            <a href="./Blog.html">Blogs</a>
+            <a href="./Antispam.html">Anti Spam</a>
+            <a href="./legal.html">Legal</a>
+            <a href="./policy.html">Policy</a>
+          </div>
+          <div class="col">
+            <h4>Support</h4>
+            <a href="./Contact.html">Contact Us</a>
+          </div>
+        </div>
+  
+        <hr />
+  
+        <div class="social-icons">
+          <a href="https://www.instagram.com/growthawkbd?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"
+            ><img src="./assets/social.png" alt="Instagram"
+          /></a>
+          <a href="https://x.com/growthawk" target="_blank"
+            ><img src="./assets/twitter copy.png" alt="Twitter"
+          /></a>
+          <a href="https://www.facebook.com/growthawk?mibextid=LQQJ4d" target="_blank"
+            ><img src="./assets/facebook.png" alt="Facebook"
+          /></a>
+          <a href="https://www.linkedin.com/company/growthawk-business-development/" target="_blank"
+            ><img src="./assets/linkedin.png" alt="LinkedIn"
+          /></a>
+        </div>
+  
+  
+        <div class="footer-links">
+          <a href="./policy.html">Terms of Service</a> –
+          <a href="./policy.html">Privacy Policy</a>
+        </div>
+  
+        <div class="copyright">&copy; 2024 Growthawk. All Rights Reserved.</div>
+      </footer>
+    </body>
+  </html>
+  
